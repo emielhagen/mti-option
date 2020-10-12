@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  <tr>
+    <th>label</th>
+    <th>destination</th>
+    <th>location</th>
+    <th>category</th>
+    <th>pallet type</th>
+  </tr>
+
+  <tr>
+    <td><%= @boxer_pallet.label %></td>
+    <td><%= @boxer_pallet.destination %> </td>
+    <td><%= @boxer_pallet.location %> </td>
+    <td><%= @boxer_pallet.category %> </td>
+    <td><%= @boxer_pallet.pallet_type.name %> </td>
+  </tr>
+</table>
+
+
+<%= link_to 'Edit', edit_boxer_pallet_path(@boxer_pallet) %> |
+<%= link_to 'Back', boxer_pallets_path %>

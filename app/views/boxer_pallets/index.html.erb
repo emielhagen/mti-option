@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Boxer Pallets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>label</th>
+      <th>destination</th>
+      <th>location</th>
+      <th>category</th>
+      <th>pallet type</th>
+      <th colspan="3">actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boxer_pallets.each do |boxer_pallet| %>
+      <tr>
+        <td><%= boxer_pallet.label %></td>
+        <td><%= boxer_pallet.destination %> </td>
+        <td><%= boxer_pallet.location %> </td>
+        <td><%= boxer_pallet.category %> </td>
+        <td><%= boxer_pallet.pallet_type.name %> </td>
+        <td><%= link_to 'Show', boxer_pallet %></td>
+        <td><%= link_to 'Edit', edit_boxer_pallet_path(boxer_pallet) %></td>
+        <td><%= link_to 'Destroy', boxer_pallet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boxer Pallet', new_boxer_pallet_path %>
