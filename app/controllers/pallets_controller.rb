@@ -22,7 +22,6 @@ class PalletsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
     if @pallet.update(pallet_params)
       redirect_to @pallet, notice: 'Pallet was successfully updated.'
     end
@@ -35,13 +34,12 @@ class PalletsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pallet
-      @pallet = Pallet.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def pallet_params
-      params.fetch(:pallet, {})
-    end
+  def set_pallet
+    @pallet = Pallet.find(params[:id])
+  end
+
+  def pallet_params
+    params.fetch(:pallet, {})
+  end
 end
