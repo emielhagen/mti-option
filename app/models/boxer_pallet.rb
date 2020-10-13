@@ -6,9 +6,9 @@ class BoxerPallet < Pallet
                       dependent: :destroy, autosave: true
 
   delegate :destination, :location, :category, :destination=, :location=,
-           :category=, to: :lazily_built_companion
+           :category_id=, to: :lazily_built_companion
 
-  validates :destination, :location, :category_id, presence: true
+  validates :destination, :location, :category, presence: true
 
   scope :active, -> { where(deleted_at: nil) }
   scope :for_location, ->(location) { joins(:companion).merge(BoxerPalletCompanion.for_location(location)) }

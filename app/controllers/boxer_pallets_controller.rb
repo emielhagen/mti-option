@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BoxerPalletsController < ApplicationController
   before_action :set_boxer_pallet, only: %i[show edit update destroy]
 
@@ -42,8 +44,7 @@ class BoxerPalletsController < ApplicationController
       @boxer_pallet = BoxerPallet.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def boxer_pallet_params
-      params.require(:boxer_pallet).permit(:label, :category, :destination, :location, :pallet_type_id)
+      params.require(:boxer_pallet).permit(:label, :category_id, :destination, :location, :pallet_type_id)
     end
 end

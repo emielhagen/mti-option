@@ -18,12 +18,16 @@ class PalletsController < ApplicationController
 
     if @pallet.save
       redirect_to @pallet, notice: 'Pallet was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
     if @pallet.update(pallet_params)
       redirect_to @pallet, notice: 'Pallet was successfully updated.'
+    else
+      render :edit
     end
   end
 
