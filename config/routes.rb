@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :boxer_pallets
+  resources :grading_pallets
   resources :pallets
 
   root to: 'boxer_pallets#index'

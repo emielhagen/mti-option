@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_141856) do
+ActiveRecord::Schema.define(version: 2020_10_13_085938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 2020_10_12_141856) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "grading_pallet_companions", force: :cascade do |t|
+    t.string "value"
+    t.integer "category_id"
+    t.integer "grading_pallet_id"
   end
 
   create_table "pallet_types", force: :cascade do |t|

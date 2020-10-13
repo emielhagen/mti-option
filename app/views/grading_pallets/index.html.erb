@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grading Pallets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>label</th>
+      <th>value</th>
+      <th>category</th>
+      <th>pallet type</th>
+      <th colspan="3">actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grading_pallets.each do |grading_pallet| %>
+      <tr>
+        <td><%= grading_pallet.label %></td>
+        <td><%= grading_pallet&.value %> </td>
+        <td><%= grading_pallet&.category&.name %> </td>
+        <td><%= grading_pallet.pallet_type.name %> </td>
+        <td><%= link_to 'Show', grading_pallet %></td>
+        <td><%= link_to 'Edit', edit_grading_pallet_path(grading_pallet) %></td>
+        <td><%= link_to 'Destroy', grading_pallet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grading Pallet', new_grading_pallet_path %>
