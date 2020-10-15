@@ -17,8 +17,8 @@
     <% @grading_pallets.each do |grading_pallet| %>
       <tr>
         <td><%= grading_pallet.label %></td>
-        <td><%= grading_pallet&.value %> </td>
-        <td><%= grading_pallet&.category&.name %> </td>
+        <td><%= grading_pallet.value %> </td>
+        <td><%= grading_pallet.category.name %> </td>
         <td><%= grading_pallet.pallet_type.name %> </td>
         <td><%= link_to 'Show', grading_pallet %></td>
         <td><%= link_to 'Edit', edit_grading_pallet_path(grading_pallet) %></td>
